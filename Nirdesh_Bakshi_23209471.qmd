@@ -57,5 +57,6 @@ The plot visualizes the relationship between speed and distance in cars. Each po
 2.  **Speed Variable (in miles/hr)**:
 
     -   The Speed variable has a mean of 15.4 miles/hr with a standard deviation of 5.3 miles/hr. This shows that Speed is not as widely spread as distance.
+    -   Now I will see
 
 ## 
