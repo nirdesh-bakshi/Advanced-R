@@ -1,0 +1,61 @@
+---
+title: "Nirdesh_Bakshi_23209471"
+author: "Nirdesh Bakshi"
+format: html
+editor: visual
+---
+
+# Introduction
+
+The `cars` dataset in R provides data on speed and stopping distances of 50 cars, loaded with `library(datasets); data(cars)`.
+
+## Approach
+
+-   I, leveraged the `ggplot2` library to create a visually appealing scatter plot.
+
+-   Data from the `cars` dataset is used, mapping speed to the x-axis and distance to the y-axis.
+
+-   Points are colored based on the distance value for better visualization.
+
+-   Finally, a red regression line is added using `geom_smooth` to depict the overall trend between speed and distance.
+
+## Plot
+
+Below is a scatter plot illustrating the relationship between **speed** and **distance** of cars.
+
+```{r, eval=TRUE, echo=FALSE, fig.height=8, fig.width=10}
+
+
+# Load the cars dataset
+library(datasets)
+data(cars)
+
+# Load 'ggplot2' library
+install.packages('ggplot2')
+library(ggplot2)
+
+# Scatter plot with ggplot
+ggplot(data = cars, aes(x = speed, y = dist)) +
+  geom_point(aes(color = dist), size = 3) +  # Color points based on distance
+  geom_smooth(method = lm, se = FALSE, color = "red") + # Add red regression line
+  labs(title = "Speed vs. Distance", x = "Speed (mph)", y = "Distance (miles)") +  # Set labels
+  theme_bw() +  # Use black and white theme
+  theme(plot.title = element_text(hjust = 0.5))  # Center title
+
+```
+
+## **Description**
+
+The plot visualizes the relationship between speed and distance in cars. Each point represents a car, with color reflecting its distance traveled. A red line shows the general trend - cars tend to travel farther at higher speeds.
+
+### Descriptive Insights:
+
+1.  **Distance Variable (in miles)**:
+
+    -   The distance variable has a mean of 43 miles with a standard deviation of 26 miles. This shows that distance is quite vastly spread out and perhaps needs more data points to shrink the standard deviation.
+
+2.  **Speed Variable (in miles/hr)**:
+
+    -   The Speed variable has a mean of 15.4 miles/hr with a standard deviation of 5.3 miles/hr. This shows that Speed is not as widely spread as distance.
+
+## 
